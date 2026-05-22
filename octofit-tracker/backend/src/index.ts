@@ -7,6 +7,10 @@ const MONGO_URI = 'mongodb://localhost:27017/octofit';
 
 app.use(express.json());
 
+app.get('/', (_req, res) => {
+  res.json({ name: 'OctoFit Tracker API', version: '1.0.0' });
+});
+
 app.get('/health', (_req, res) => {
   res.json({ status: 'ok' });
 });
