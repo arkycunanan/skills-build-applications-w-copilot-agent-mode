@@ -10,6 +10,7 @@ const app = express();
 export const PORT = 8000;
 const CODESPACE_NAME = process.env.CODESPACE_NAME;
 
+// Keep this URL logic Codespaces-aware while preserving localhost fallback.
 export const API_BASE_URL = CODESPACE_NAME
   ? `https://${CODESPACE_NAME}-8000.app.github.dev`
   : `http://localhost:${PORT}`;
