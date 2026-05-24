@@ -1,0 +1,126 @@
+.appShell {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1.25rem;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.topbar h1 {
+  margin: 0;
+}
+
+.subtitle {
+  margin: 0.2rem 0 0;
+  color: #36506b;
+}
+
+.apiInfo {
+  text-align: right;
+  background: #ffffff;
+  border: 1px solid #d5e5f2;
+  border-radius: 0.75rem;
+  padding: 0.6rem 0.8rem;
+}
+
+.apiInfo .label {
+  display: block;
+  font-size: 0.8rem;
+  color: #5a7288;
+}
+
+.apiInfo .value {
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+.notice {
+  background: #fff4cf;
+  border: 1px solid #f2da8d;
+  border-radius: 0.6rem;
+  padding: 0.7rem 0.8rem;
+  margin: 0 0 1rem;
+}
+
+.navTabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tab {
+  text-decoration: none;
+  color: #12344f;
+  background: #eaf3fb;
+  border: 1px solid #c9deef;
+  border-radius: 999px;
+  padding: 0.45rem 0.85rem;
+  font-weight: 600;
+}
+
+.tab.active {
+  background: #124e78;
+  color: #ffffff;
+  border-color: #124e78;
+}
+
+.panel {
+  background: #ffffff;
+  border: 1px solid #d5e5f2;
+  border-radius: 0.8rem;
+  padding: 1rem;
+}
+
+.panelHeader {
+  margin-bottom: 0.8rem;
+}
+
+.panelHeader h2 {
+  margin: 0;
+}
+
+.endpoint {
+  margin: 0.3rem 0 0;
+  color: #5a7288;
+  word-break: break-all;
+}
+
+.meta {
+  margin: 0.2rem 0 0.75rem;
+  color: #36506b;
+  font-size: 0.92rem;
+}
+
+.json {
+  margin: 0;
+  background: #0f1a24;
+  color: #d7f2f7;
+  border-radius: 0.6rem;
+  padding: 0.8rem;
+  max-height: 450px;
+  overflow: auto;
+}
+
+.error {
+  color: #9f1f1f;
+  font-weight: 600;
+}
+
+@media (max-width: 700px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .apiInfo {
+    width: 100%;
+    text-align: left;
+  }
+}
