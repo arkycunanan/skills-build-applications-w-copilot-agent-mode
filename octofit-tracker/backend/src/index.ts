@@ -1,31 +1,16 @@
-import express from 'express';
-import mongoose from 'mongoose';
+import { connectDatabase } from './config/database';
+import app, { API_BASE_URL, PORT } from './server';
 
-const app = express();
-const PORT = 8000;
-const MONGO_URI = 'mongodb://localhost:27017/octofit';
-
-app.use(express.json());
-
-app.get('/', (_req, res) => {
-  res.json({ name: 'OctoFit Tracker API', version: '1.0.0' });
-});
-
-app.get('/health', (_req, res) => {
-  res.json({ status: 'ok' });
-});
-
-mongoose
-  .connect(MONGO_URI)
-  .then(() => {
-    console.log('Connected to MongoDB on port 27017');
+async function startServer(): Promise<void> {
+  try {
+    await connectDatabase();
     app.listen(PORT, () => {
-      console.log(`OctoFit backend running on http://localhost:${PORT}`);
+      console.log(`OctoFit backend running on ${API_BASE_URL}`);
     });
-  })
-  .catch((err) => {
-    console.error('MongoDB connection error:', err);
+  } catch (error) {
+    console.error('Failed to start OctoFit backend:', error);
     process.exit(1);
-  });
+  }
+}
 
-export default app;
+void startServer();
