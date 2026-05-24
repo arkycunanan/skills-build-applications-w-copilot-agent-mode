@@ -1,5 +1,6 @@
 import { useApiCollection } from '../hooks/useApiCollection';
 
+// Codespaces endpoint pattern: -8000.app.github.dev/api/activities
 function Activities() {
   const { endpoint, items, pagination, isLoading, error } = useApiCollection('activities');
 
